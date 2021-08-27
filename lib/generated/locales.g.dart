@@ -23,6 +23,10 @@ class LocaleKeys {
   static const title_kemarin = 'title_kemarin';
   static const title_pilih_kategori = 'title_pilih_kategori';
   static const title_tambah_pengeluaran_baru = 'title_tambah_pengeluaran_baru';
+  static const title_data_pengeluaran_kemarin =
+      'title_data_pengeluaran_kemarin';
+  static const title_data_pengeluaran_hari_ini =
+      'title_data_pengeluaran_hari_ini';
   static const hint_text_nama_pengeluaran = 'hint_text_nama_pengeluaran';
   static const hint_text_tanggal_pengeluaran = 'hint_text_tanggal_pengeluaran';
   static const hint_text_nominal_pengeluaran = 'hint_text_nominal_pengeluaran';
@@ -47,6 +51,10 @@ class Locales {
     'title_kemarin': 'Kemarin',
     'title_pilih_kategori': 'Pilih Kategori',
     'title_tambah_pengeluaran_baru': 'Tambah Pengeluaran Baru',
+    'title_data_pengeluaran_kemarin':
+        'Data Pengeluaran Kemarin Masih Belum Ada',
+    'title_data_pengeluaran_hari_ini':
+        'Data Pengeluaran Hari Ini Masih Belum Ada',
     'hint_text_nama_pengeluaran': 'Nama Pengeluaran',
     'hint_text_tanggal_pengeluaran': 'Tanggal Pengeluaran',
     'hint_text_nominal_pengeluaran': 'Nominal Pengeluaran',

@@ -11,7 +11,9 @@
         "hari_ini": "Hari Ini",
         "kemarin": "Kemarin",
         "pilih_kategori": "Pilih Kategori",
-        "tambah_pengeluaran_baru": "Tambah Pengeluaran Baru"
+        "tambah_pengeluaran_baru": "Tambah Pengeluaran Baru",
+        "data_pengeluaran_kemarin":"Data Pengeluaran Kemarin Masih Belum Ada",
+        "data_pengeluaran_hari_ini":"Data Pengeluaran Hari Ini Masih Belum Ada"
     },
     "hint_text":{
         "nama_pengeluaran": "Nama Pengeluaran",

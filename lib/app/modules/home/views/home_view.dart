@@ -104,24 +104,33 @@ class HomeView extends GetView<HomeController> {
                     ),
                     SizedBox(height: SizedSpace.sizedSpaceLarge),
                     Obx(
-                      () => ListView.builder(
-                        itemCount: controller.dataListHiveHariIni.length,
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        reverse: true,
-                        itemBuilder: (context, index) {
-                          return CustomCard.getInstance.cardList(
-                            title: controller
-                                .dataListHiveHariIni[index].namePengeluaran,
-                            nominal:
-                                controller.dataListHiveHariIni[index].nominal,
-                            pathIcon: controller
-                                .dataListHiveHariIni[index].pathIconCategory,
-                            colorHex: int.parse(controller
-                                .dataListHiveHariIni[index].colorIconCategory),
-                          );
-                        },
-                      ),
+                      () => (controller.dataListHiveHariIni.length == 0)
+                          ? Container(
+                              child: Text(
+                                "title_data_pengeluaran_hari_ini".tr,
+                                style: TextStyle(color: ColorsCustom.grey3),
+                              ),
+                            )
+                          : ListView.builder(
+                              itemCount: controller.dataListHiveHariIni.length,
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              reverse: true,
+                              itemBuilder: (context, index) {
+                                return CustomCard.getInstance.cardList(
+                                  title: controller.dataListHiveHariIni[index]
+                                      .namePengeluaran,
+                                  nominal: controller
+                                      .dataListHiveHariIni[index].nominal,
+                                  pathIcon: controller
+                                      .dataListHiveHariIni[index]
+                                      .pathIconCategory,
+                                  colorHex: int.parse(controller
+                                      .dataListHiveHariIni[index]
+                                      .colorIconCategory),
+                                );
+                              },
+                            ),
                     ),
                     SizedBox(height: SizedSpace.sizedSpaceNormal_x),
                     Text(
@@ -130,25 +139,35 @@ class HomeView extends GetView<HomeController> {
                     ),
                     SizedBox(height: SizedSpace.sizedSpaceLarge),
                     Obx(
-                      () => ListView.builder(
-                        itemCount: controller.dataListHiveKemarinIni.length,
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        reverse: true,
-                        itemBuilder: (context, index) {
-                          return CustomCard.getInstance.cardList(
-                            title: controller
-                                .dataListHiveKemarinIni[index].namePengeluaran,
-                            nominal: controller
-                                .dataListHiveKemarinIni[index].nominal,
-                            pathIcon: controller
-                                .dataListHiveKemarinIni[index].pathIconCategory,
-                            colorHex: int.parse(controller
-                                .dataListHiveKemarinIni[index]
-                                .colorIconCategory),
-                          );
-                        },
-                      ),
+                      () => (controller.dataListHiveHariIni.length == 0)
+                          ? Container(
+                              child: Text(
+                                "title_data_pengeluaran_kemarin".tr,
+                                style: TextStyle(color: ColorsCustom.grey3),
+                              ),
+                            )
+                          : ListView.builder(
+                              itemCount:
+                                  controller.dataListHiveKemarinIni.length,
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              reverse: true,
+                              itemBuilder: (context, index) {
+                                return CustomCard.getInstance.cardList(
+                                  title: controller
+                                      .dataListHiveKemarinIni[index]
+                                      .namePengeluaran,
+                                  nominal: controller
+                                      .dataListHiveKemarinIni[index].nominal,
+                                  pathIcon: controller
+                                      .dataListHiveKemarinIni[index]
+                                      .pathIconCategory,
+                                  colorHex: int.parse(controller
+                                      .dataListHiveKemarinIni[index]
+                                      .colorIconCategory),
+                                );
+                              },
+                            ),
                     ),
                     SizedBox(height: SizedSpace.sizedSpaceSuperLarge_xx),
                   ],

@@ -32,6 +32,7 @@ class HomeController extends GetxController {
   void onClose() {}
 
   void initializeData() {
+    initializeValue();
     for (AddDataHive data in HiveHelper.getInstance.readDataHive) {
       var resultDate = FormatterCustom.getInstance
           .convertStringtoDate(date: data.tanggalPengeluaran);
@@ -39,7 +40,6 @@ class HomeController extends GetxController {
       getPengeluaranBulanIni(data, resultDate);
       addDataLisHiveHariIni(data, resultDate);
       addDataLisHiveBulanIni(data, resultDate);
-      initializeValue();
     }
   }
 
