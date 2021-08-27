@@ -1,13 +1,21 @@
 {
     "button":{
-        "login": "Login",
-        "sign_in": "Sing in",
-        "logout": "Logout"
+        "simpan": "Simpan"
     },
     "title":{
-        "title_home": "Title Home",
-        "title_not_home": "Title Not Home",
+        "halo_user": "Halo, User!",
+        "jangan_lupa_catat_keuanganmu": "Jangan lupa catat keuanganmu setiap hari!",
         "pengeluaranmu_hari_ini": "Pengeluaranmu hari ini",
-        "pengeluaranmu_bulan_ini": "Pengeluaranmu bulan ini"
+        "pengeluaranmu_bulan_ini": "Pengeluaranmu bulan ini",
+        "pengeluaran_berdasarkan_kategori": "Pengeluaran berdasarkan kategori",
+        "hari_ini": "Hari Ini",
+        "kemarin": "Kemarin",
+        "pilih_kategori": "Pilih Kategori",
+        "tambah_pengeluaran_baru": "Tambah Pengeluaran Baru"
+    },
+    "hint_text":{
+        "nama_pengeluaran": "Nama Pengeluaran",
+        "tanggal_pengeluaran": "Tanggal Pengeluaran",
+        "nominal_pengeluaran": "Nominal Pengeluaran"   
     }
 }

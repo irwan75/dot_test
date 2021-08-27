@@ -13,13 +13,12 @@ class ThemaCustom {
   );
 
   static final lightTheme = ThemeData(
-    primarySwatch: Colors.grey,
+    primarySwatch: Colors.lightBlue,
     primaryColor: ColorsCustom.primaryColor,
     brightness: Brightness.light,
     backgroundColor: const Color(0xFFE5E5E5),
     accentColor: Colors.black,
     accentIconTheme: IconThemeData(color: Colors.white),
     dividerColor: Colors.white54,
-    fontFamily: "Inter",
   );
 }

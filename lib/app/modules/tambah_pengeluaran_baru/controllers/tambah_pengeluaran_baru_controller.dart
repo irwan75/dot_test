@@ -15,6 +15,8 @@ class TambahPengeluaranBaruController extends GetxController {
 
   List<DataListCategory> dataListCategory = [];
 
+  Rx<bool> enableButton = false.obs;
+
   var dataCategory = Rx<DataListCategory>(
     DataListCategory(
         colorHexIcon: "0XFFF2C94C",
@@ -50,6 +52,7 @@ class TambahPengeluaranBaruController extends GetxController {
       formTanggalPengeluaran.value.text =
           FormatterCustom.getInstance.justFormatDate(dateTime: dateGet);
     }
+    onChange();
   }
 
   void addData({
@@ -79,5 +82,15 @@ class TambahPengeluaranBaruController extends GetxController {
   void onTapCateogry(DataListCategory e) {
     Get.back();
     dataCategory.value = e;
+  }
+
+  void onChange() {
+    if (!formNamaPengeluaran.value.text.isEmpty &&
+        !formTanggalPengeluaran.value.text.isEmpty &&
+        !formNominalPengeluaran.value.text.isEmpty) {
+      enableButton.value = true;
+    } else {
+      enableButton.value = false;
+    }
   }
 }

@@ -1,6 +1,8 @@
 import 'package:data/const/sized_border_radius.dart';
+import 'package:data/const/sized_font.dart';
 import 'package:data/const/sized_margin_padding.dart';
 import 'package:data/const/sized_space.dart';
+import 'package:dot_test/app/res/colors.dart';
 import 'package:dot_test/app/res/path_image_icon.dart';
 import 'package:dot_test/app/res/styles.dart';
 import 'package:flutter/material.dart';
@@ -14,20 +16,30 @@ class CustomCard {
 
   static CustomCard get getInstance => _instance;
 
-  Widget cardPengeluaran({String title = "", int nominal = 0}) {
+  Widget cardPengeluaran({
+    String title = "",
+    int nominal = 0,
+    Color colorBackground = Colors.black,
+  }) {
     return Expanded(
       flex: 1,
       child: Container(
         padding: const EdgeInsets.symmetric(
-          horizontal: SizedMarginPadding.sizedMarginPaddingSmall_xx,
-          vertical: SizedMarginPadding.sizedMarginPaddingSmall_xx,
+          horizontal: SizedMarginPadding.sizedMarginPaddingNormal,
+          vertical: SizedMarginPadding.sizedMarginPaddingNormal,
         ),
-        decoration: StylesCustom.getInstance
-            .boxDecorationPengeluaran(colorBackground: Colors.blueGrey),
+        decoration: StylesCustom.getInstance.boxDecorationPengeluaran(
+          colorBackground: colorBackground,
+          borderRadius: SizedBorderRadius.borderRadiusSmall_x,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(title),
+            Text(
+              title,
+              style: StylesCustom.textWhiteLightPengeluaran,
+            ),
             SizedBox(height: SizedSpace.sizedSpaceMedium_x),
             Text(
               "Rp. ${nominal.toMoneyIdrFormat()}",
@@ -42,34 +54,73 @@ class CustomCard {
   Widget cardKategori(
       {String pathIcon = "", String title = "", int nominal = 0}) {
     return Container(
-      decoration: StylesCustom.getInstance
-          .boxDecorationPengeluaran(colorBackground: Colors.blueGrey),
+      margin: EdgeInsets.only(
+        right: SizedMarginPadding.sizedMarginPaddingNormal_xx,
+        top: SizedMarginPadding.sizedMarginPaddingNormal_xx,
+        bottom: SizedMarginPadding.sizedMarginPaddingNormal_xx,
+      ),
+      padding: EdgeInsets.symmetric(
+        horizontal: SizedMarginPadding.sizedMarginPaddingNormal_xx,
+        vertical: SizedMarginPadding.sizedMarginPaddingNormal_xx,
+      ),
+      constraints: BoxConstraints(
+        minWidth: 130,
+        minHeight: 140,
+      ),
+      decoration: StylesCustom.boxDecorationPengeluaranCategory,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(PathIcon.basePath + pathIcon),
-          Text(title),
-          Text("Rp. ${nominal.toMoneyIdrFormat()}"),
+          SizedBox(height: SizedSpace.sizedSpaceNormal),
+          Text(
+            title,
+            style: TextStyle(color: ColorsCustom.grey3),
+          ),
+          SizedBox(height: SizedSpace.sizedSpaceMedium_x),
+          Text(
+            "Rp. ${nominal.toMoneyIdrFormat()}",
+            style: StylesCustom.textBlackBold,
+          ),
         ],
       ),
     );
   }
 
-  Widget cardList(
-      {String pathIcon = "",
-      String title = "",
-      int nominal = 0,
-      int colorHex = 0}) {
+  Widget cardList({
+    String pathIcon = "",
+    String title = "",
+    int nominal = 0,
+    int colorHex = 0,
+  }) {
     return Container(
-      decoration: StylesCustom.getInstance
-          .boxDecorationPengeluaran(colorBackground: Colors.blueGrey),
+      padding: EdgeInsets.symmetric(
+        horizontal: SizedMarginPadding.sizedMarginPaddingNormal_xx,
+        vertical: SizedMarginPadding.sizedMarginPaddingLarge_x,
+      ),
+      margin:
+          EdgeInsets.only(bottom: SizedMarginPadding.sizedMarginPaddingLarge),
+      decoration: StylesCustom.boxDecorationListPengeluaran,
       child: Row(
         children: [
-          RenderSvgFile.getInstance
-              .renderSvgFile(pathImage: PathIcon.basePath+pathIcon, colorIcon: Color(colorHex)),
+          RenderSvgFile.getInstance.renderSvgFile(
+              pathImage: PathIcon.basePath + pathIcon,
+              colorIcon: Color(colorHex)),
+          SizedBox(width: SizedSpace.sizedSpaceNormal),
           Expanded(
-            child: Text(title),
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: SizedFont.textMedium,
+                color: ColorsCustom.grey1,
+              ),
+            ),
           ),
-          Text("Rp. ${nominal.toMoneyIdrFormat()}"),
+          Text(
+            "Rp. ${nominal.toMoneyIdrFormat()}",
+            style: StylesCustom.textBlackBold,
+          ),
         ],
       ),
     );
@@ -108,9 +159,9 @@ class CustomCard {
               padding: EdgeInsets.all(SizedBorderRadius.borderRadiusTiny_xx),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.grey,
+                color: ColorsCustom.grey5,
               ),
-              child: Icon(Icons.chevron_right),
+              child: Icon(Icons.chevron_right, color: ColorsCustom.grey3),
             )
           ],
         ),

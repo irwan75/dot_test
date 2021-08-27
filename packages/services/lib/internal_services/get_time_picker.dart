@@ -12,7 +12,7 @@ class GetTimePicker {
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime.now().add(Duration(days: -3)),
-      lastDate: DateTime.now().add(Duration(days: 360)),
+      lastDate: DateTime.now(),
     );
     return getDateTime;
   }

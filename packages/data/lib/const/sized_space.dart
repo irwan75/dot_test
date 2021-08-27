@@ -26,6 +26,12 @@ class SizedSpace{
   static const double sizedSpaceLarge_x = 22;
   /// Sized Space 24
   static const double sizedSpaceLarge_xx = 24;
+  /// Sized Space 26
+  static const double sizedSpaceSuperLarge = 24;
+  /// Sized Space 28
+  static const double sizedSpaceSuperLarge_x = 26;
+  /// Sized Space 30
+  static const double sizedSpaceSuperLarge_xx = 28;
 
   
 
